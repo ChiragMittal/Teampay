@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
+from rest_framework.decorators import api_view
 import os
 
 from .scripts.check_word import check_word
@@ -10,6 +11,7 @@ for l in text_file.readlines():
     as_list = l.split(", ")
     arr.append(as_list[0].replace("\n", ""))
 
+@api_view(['GET'])
 def index(request,word):
     all_values = tuple(arr)
 
