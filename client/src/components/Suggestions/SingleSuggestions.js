@@ -2,8 +2,10 @@ import React,{useState} from "react";
 
 function SingleSuggestions({item}){
     return(
-        <div>
+        <div class="card">
+            <div class="container">
                 <p>{item}</p>
+            </div>
         </div>
     )
 

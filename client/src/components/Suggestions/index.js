@@ -3,7 +3,8 @@ import SingleSuggestions from './SingleSuggestions'
 
 function Suggestions ({data}) {
     return(
-        <div>
+        <div className="together">
+            <h1>Here are some suggestions</h1>
             {data.map((item)=> <SingleSuggestions item={item} /> )}
         </div>
     )

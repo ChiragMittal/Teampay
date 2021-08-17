@@ -40,13 +40,15 @@ export default function App()  {
 		})
 		.catch( error=> {
 			setError(error);
+			setLoading(false)
+			setCorrect('')
 		  })
 
 	}
 	return (
 		<div className='app'>
 			<SearchInput query={query} onQueryChange={handleInput} submitForm={submitForm}/>
-			{loading?<div>
+			{loading?<div className ="loading">
                 <Button variant="primary" disabled>
                     <Spinner
                     as="span"
@@ -59,8 +61,8 @@ export default function App()  {
                 </Button>
             </div>:null}
 			{data.length?<Suggestions data={data}/>:null}
-			{error?<h1>Please check the word</h1>:null}
-			{correct?<h1>Your word is correct</h1>:null}
+			{correct && !error?<h1 className="loading">Your word is correct</h1>:null}
+			{!correct && error?<h1 className="loading">Please check the word</h1>:null}
 		</div>
   );
 		

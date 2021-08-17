@@ -13,14 +13,13 @@ for l in text_file.readlines():
 
 @api_view(['GET'])
 def index(request,word):
-    all_values = tuple(arr)
 
-    get_word = min(all_values, key=lambda x: check_word(word.lower(), x))
+    get_word = min(arr, key=lambda x: check_word(word.lower(), x))
     print(get_word)
     suggestions = []
     suggest=[]
     
-    for i in all_values:
+    for i in arr:
         if(i == word):
             return JsonResponse({'suggestions':[],"correct": True},status=200)
         elif (i.startswith(word.lower())):
