@@ -2,8 +2,8 @@ import React,{useState} from "react";
 
 function SingleSuggestions({item}){
     return(
-        <div class="card">
-            <div class="container">
+        <div className="card">
+            <div className="container">
                 <p>{item}</p>
             </div>
         </div>
