@@ -9,7 +9,7 @@ const SearchInput = ({
     <input
       className="search__input"
       type="text"
-      placeholder="search books"
+      placeholder="search words"
       onChange={onQueryChange}
       value={query}
       autoFocus
